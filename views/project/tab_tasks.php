@@ -29,6 +29,8 @@ $project_tasks = $data['project_tasks'];
 		}
 		?>
 
+
+
 <!-- Modal : AddTaskModal -->
 	<div id="AddTaskModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   	
