@@ -62,6 +62,7 @@ class Frosting_Decorator extends Decorator_Wrapper
 // this is a test   
 // this is a major fix - to master branch
 
+
 // Run through some tests to satisfy our customer!
 echo '<p>Mmm! I want a cupcake!</p>';
 $cupcake = new Cupcake(5, 'none');
