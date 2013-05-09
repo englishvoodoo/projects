@@ -60,6 +60,7 @@ class Frosting_Decorator extends Decorator_Wrapper
 }
 
 // this is a test   
+// but this is another line
 
 // Run through some tests to satisfy our customer!
 echo '<p>Mmm! I want a cupcake!</p>';
