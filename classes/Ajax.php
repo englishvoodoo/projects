@@ -1,6 +1,12 @@
 <?php
 // classes/Ajax.php
 
+class dummy_class
+{
+
+	
+}
+
 class AjaxFactory
 {
 
