@@ -6,13 +6,14 @@ class ProjectController extends Controller
 	public function __construct()
 	{
 
-		echo "<BR>ProjectController constructor...";
+		//echo "<BR>ProjectController constructor...";
 
 		require_once('classes/View.php');
 		$this->view = new View();
 
 		require_once('classes/Project.php');
 		require_once('classes/Helper.php');
+		require_once('classes/File.php');
 
 	}
 
@@ -28,6 +29,31 @@ class ProjectController extends Controller
 		$this->view->render('ProjectIndex', $data);
 		$this->view->footer();
 
+	}
+
+	public function add_fileAction()
+	{
+
+		$project_id = $_REQUEST['project_id'];
+
+		$File = new File();
+
+		$File->setFile($_FILES["file"]);
+
+		if(!$File->validateFile()) {
+
+			echo "<BR>invalid file";
+
+		} else {
+
+			$File->storeFile($project_id);
+
+		}
+
+		// redirect to the ProjectDetail screen
+		$Helper = new Helper();
+		$Helper->redirect('index.php?route=project&sub=detail&id='.$project_id);
+	
 	}
 
 	public function add_taskAction()
@@ -187,9 +213,12 @@ class ProjectController extends Controller
 
 		$project_tasks = $Project->getTasks();
 
+		$project_files = $Project->getFiles();
+
 		$data = array(
 					'project_detail'	=> $project_detail,
 					'project_tasks'		=> $project_tasks,
+					'project_files'		=> $project_files,
 					);
 
 		$this->view->header();

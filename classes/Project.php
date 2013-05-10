@@ -54,6 +54,17 @@ class Project
 
 		return $rows;
 
+	}
+
+	public function getFiles()
+	{
+
+
+		$stmt = $this->conn->prepare("SELECT * FROM files WHERE project_id = ?");
+		$stmt->execute(array($this->project_id));
+		$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+		return $rows;
 
 	}
 
