@@ -28,6 +28,7 @@
           <li><a href="index.php?route=task">Tasks</a></li>
           <li><a href="index.php?route=admin">Admin</a></li>
         </ul>
+        <input type="button" id="button_hide" value="hide"><input type="button" id="button_show" value="show">
       </div>
     </div>
   </div>

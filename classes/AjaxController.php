@@ -7,6 +7,27 @@ class AjaxController extends Controller
 	{
 
 		require_once('classes/Ajax.php');
+		require_once('classes/Helper.php');
+
+	}
+
+	public function callAction()
+	{
+
+		$Helper = new Helper();
+
+		$action = $_REQUEST['action'];
+
+		$user_id = 1;
+
+		if($action == 'right_panel_hide') {
+			$Helper->settingUpdate($user_id, 'right_panel', 'hide');
+
+		}
+
+		if($action == 'right_panel_show') {
+			$Helper->settingUpdate($user_id, 'right_panel', 'show');
+		}
 
 	}
 

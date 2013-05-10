@@ -1,6 +1,14 @@
 <?php
 // index.php
 
+
+
+session_start();
+
+require_once('classes/Session.php');
+
+$Session = new Session();
+
 require_once('classes/Controller.php');
 
 

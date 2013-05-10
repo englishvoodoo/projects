@@ -19,12 +19,7 @@ $project_detail = $data['project_detail'];
 
 <div id="main_content">
 
-	<div id="title_bar">
-		<h2>Project Detail View</h2>
-	</div>
-
-
-
+	
 	<div id="content">
 
 		<form name="update_project_form" method="POST" action="index.php">
@@ -32,17 +27,21 @@ $project_detail = $data['project_detail'];
 		<input type="hidden" name="sub" value="save">
 		<input type="hidden" name="id" value="<?php echo $project_detail[0]['project_id'];?>">
 
-		<div>Title</div>
-		<div><input type="text" name="project_title" value="<?php echo $project_detail[0]['project_title'];?>"></div>
+		<fieldset>
+		<legend>Project Detail</legend>
+		<label>Title</label>
+		<input type="text" name="project_title" value="<?php echo $project_detail[0]['project_title'];?>">
 
-		<div>Summary</div>
-		<div><input type="text" name="project_summary" value="<?php echo $project_detail[0]['project_summary'];?>"></div>
+		<label>Summary</label>
+		<input type="text" name="project_summary" value="<?php echo $project_detail[0]['project_summary'];?>">
 
-		<div>Description</div>
-		<div><input type="text" name="project_description" value="<?php echo $project_detail[0]['project_description'];?>"></div>
+		<label>Description</label>
+		<textarea name="project_description" id="project_description"><?php echo $project_detail[0]['project_description'];?></textarea>
 
-		<div>&nbsp;</div>
-		<div><input type="submit" value="update">
+		<label>&nbsp;</label>
+		<button type="submit" class="btn">update</button>
+
+		</fieldset>
 
 		</form>
 

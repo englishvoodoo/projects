@@ -15,7 +15,7 @@ foreach($project_files as $file) {
 	$file_src = $file['file_src'];
 
 	echo "<div class='row-fluid'>
-			<div class='span9'><a href='#EditTaskModal' data-toggle='modal'>".$file['file_src']."</a></div>
+			<div class='span9'><a href='uploads/".$file['file_src']."' target='_blank'>".$file['file_src']."</a></div>
 		</div>";
 
 }
